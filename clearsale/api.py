@@ -8,7 +8,7 @@ class ClearSaleConnector():
         self._entity_code = entity_code
         self._extra_params_connection = extra_params_connection
         self._ws_url = "https://homologacao.clearsale.com.br/integracaov2/service.asmx?wsdl" if use_sandbox \
-            else "https://www.clearsale.com.br/integracaov2/service.asmx?wsdl"
+            else "https://integracao.clearsale.com.br/service.asmx"
 
     def get_ws_client(self):
         return Client(self._ws_url, **self._extra_params_connection)
