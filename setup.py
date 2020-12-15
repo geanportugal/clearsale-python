@@ -10,13 +10,12 @@ CLASSIFIERS = [
     'Operating System :: OS Independent',
     'Topic :: Software Development',
     'Programming Language :: Python',
-    'Programming Language :: Python :: 2',
-    # 'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3',
 ]
 
 install_requires = [
-    'suds==0.4',
-    'xmltodict==0.9.2'
+    'suds-py3==1.3.4.0',
+    'xmltodict==0.10.2'
 ]
 
 setup(
