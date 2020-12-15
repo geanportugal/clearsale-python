@@ -198,6 +198,7 @@ class OrderStatusResponse(BaseResponse):
         </Orders>
     </ClearSale>
     """
+    pass
 
 
 class SendOrdersResponse(BaseResponse):
@@ -217,3 +218,4 @@ class SendOrdersResponse(BaseResponse):
         </PackageStatus>
     </ClearSale>
     """
+    pass
