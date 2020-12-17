@@ -22,7 +22,7 @@ class ClearSaleService():
         self._connector = clearsale_connector
 
     def send_orders(self, orders):
-        xml = u"<ClearSale>{0}</ClearSale>".format(orders.get_xml())
+        xml = "<ClearSale>{0}</ClearSale>".format(orders.get_xml())
         xml_ret = self._connector.get_ws_client().service.SendOrders(
             self._connector.get_entity_code(), xml)
         return SendOrdersResponse(xml_ret.format())

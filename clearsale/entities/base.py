@@ -10,19 +10,19 @@ class BaseEntity(object):
         http://www.madchicken.it/2010/06/serialize-a-python-dictionary-to-xml.html
         """
         xml = ''
-        for key in root.keys():
+        for key in list(root.keys()):
             # print "=========="
             # print key
             if isinstance(root[key], dict):
-                xml = u'{}<{}>{}</{}>'.format(xml, key, self.serialize(root[key]), key)
+                xml = '{}<{}>{}</{}>'.format(xml, key, self.serialize(root[key]), key)
             elif isinstance(root[key], list):
-                xml = u'{}<{}>'.format(xml, key)
+                xml = '{}<{}>'.format(xml, key)
                 for item in root[key]:
-                    xml = u'{}{}'.format(xml, self.serialize(item))
-                xml = u'{}</{}>'.format(xml, key)
+                    xml = '{}{}'.format(xml, self.serialize(item))
+                xml = '{}</{}>'.format(xml, key)
             else:
                 value = root[key]
-                xml = u'{}<{}>{}</{}>'.format(xml, key, value, key)
+                xml = '{}<{}>{}</{}>'.format(xml, key, value, key)
         return xml
 
     def get_data(self):
@@ -67,7 +67,7 @@ class BaseEntity(object):
         if not self._data:
             self._data = {}
 
-        keys = self._data.keys()
+        keys = list(self._data.keys())
         if keys:
             if isinstance(self._data[keys[0]], dict):
                 data_temp = self._data[keys[0]]
@@ -166,4 +166,4 @@ class BaseCustomer(BaseEntity):
         )
 
     def add_phone(self, Phone):
-        self._data[self._data.keys()[0]]["Phones"].append(Phone.get_dict())
+        self._data[list(self._data.keys())[0]]["Phones"].append(Phone.get_dict())

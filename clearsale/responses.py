@@ -51,17 +51,17 @@ class OrderReturn():
     )
 
     STATUS_LABEL = {
-        STATUS_SAIDA_APROVACAO_AUTOMATICA: u"(Aprovação Automática) – Pedido foi aprovado automaticamente segundo parâmetros definidos na regra de aprovação automática.",
-        STATUS_SAIDA_APROVACAO_MANUAL: u"(Aprovação Manual) – Pedido aprovado manualmente por tomada de decisão de um analista.",
-        STATUS_SAIDA_REPROVADA_SEM_SUSPEITA: u"(Reprovado Sem Suspeita) – Pedido Reprovado sem Suspeita por falta de contato com o cliente dentro do período acordado e/ou políticas restritivas de CPF (Irregular, SUS ou Cancelados)",
-        STATUS_SAIDA_ANALISE_MANUAL: u"(Análise manual) – Pedido está em fila para análise",
-        STATUS_SAIDA_ERRO: u"(Erro) - Ocorreu um erro na integração do pedido, sendo necessário analisar um possível erro no XML enviado e após a correção reenvia-lo.",
-        STATUS_SAIDA_NOVO: u"(Novo) – Pedido importado e não classificado Score pela analisadora (processo que roda o Score de cada pedido).",
-        STATUS_SAIDA_SUSPENSAO_MANUAL: u"(Suspensão Manual) – Pedido Suspenso por suspeita de fraude baseado no contato com o 'cliente' ou ainda na base ClearSale.",
-        STATUS_SAIDA_CANCELADO_PELO_CLIENTE: u"(Cancelado pelo Cliente) – Cancelado por solicitação do cliente ou duplicidade do pedido.",
-        STATUS_SAIDA_FRAUDE_CONFIRMADA: u"(Fraude Confirmada) – Pedido imputado como Fraude Confirmada por contato com a administradora de cartão e/ou contato com titular do cartão ou CPF do cadastro que desconhecem a compra.",
-        STATUS_SAIDA_REPROVACAO_AUTOMATICA: u"(Reprovação Automática) – Pedido Reprovado Automaticamente por algum tipo de Regra de Negócio que necessite aplicá-la (Obs: não usual e não recomendado).",
-        STATUS_SAIDA_REPROVACAO_POR_POLITICA: u"(Reprovação Por Política) – Pedido reprovado automaticamente por política estabelecida pelo cliente ou ClearSale.",
+        STATUS_SAIDA_APROVACAO_AUTOMATICA: "(Aprovação Automática) – Pedido foi aprovado automaticamente segundo parâmetros definidos na regra de aprovação automática.",
+        STATUS_SAIDA_APROVACAO_MANUAL: "(Aprovação Manual) – Pedido aprovado manualmente por tomada de decisão de um analista.",
+        STATUS_SAIDA_REPROVADA_SEM_SUSPEITA: "(Reprovado Sem Suspeita) – Pedido Reprovado sem Suspeita por falta de contato com o cliente dentro do período acordado e/ou políticas restritivas de CPF (Irregular, SUS ou Cancelados)",
+        STATUS_SAIDA_ANALISE_MANUAL: "(Análise manual) – Pedido está em fila para análise",
+        STATUS_SAIDA_ERRO: "(Erro) - Ocorreu um erro na integração do pedido, sendo necessário analisar um possível erro no XML enviado e após a correção reenvia-lo.",
+        STATUS_SAIDA_NOVO: "(Novo) – Pedido importado e não classificado Score pela analisadora (processo que roda o Score de cada pedido).",
+        STATUS_SAIDA_SUSPENSAO_MANUAL: "(Suspensão Manual) – Pedido Suspenso por suspeita de fraude baseado no contato com o 'cliente' ou ainda na base ClearSale.",
+        STATUS_SAIDA_CANCELADO_PELO_CLIENTE: "(Cancelado pelo Cliente) – Cancelado por solicitação do cliente ou duplicidade do pedido.",
+        STATUS_SAIDA_FRAUDE_CONFIRMADA: "(Fraude Confirmada) – Pedido imputado como Fraude Confirmada por contato com a administradora de cartão e/ou contato com titular do cartão ou CPF do cadastro que desconhecem a compra.",
+        STATUS_SAIDA_REPROVACAO_AUTOMATICA: "(Reprovação Automática) – Pedido Reprovado Automaticamente por algum tipo de Regra de Negócio que necessite aplicá-la (Obs: não usual e não recomendado).",
+        STATUS_SAIDA_REPROVACAO_POR_POLITICA: "(Reprovação Por Política) – Pedido reprovado automaticamente por política estabelecida pelo cliente ou ClearSale.",
     }
 
     APROVADO = 1
@@ -70,10 +70,10 @@ class OrderReturn():
     ERRO = 4
 
     STATUS = {}
-    STATUS[APROVADO] = u'Aprovado'
-    STATUS[AGUARDANDO_APROVACAO] = u'Aguardando aprovação'
-    STATUS[REPROVADO] = u'Reprovado'
-    STATUS[ERRO] = u'Erro'
+    STATUS[APROVADO] = 'Aprovado'
+    STATUS[AGUARDANDO_APROVACAO] = 'Aguardando aprovação'
+    STATUS[REPROVADO] = 'Reprovado'
+    STATUS[ERRO] = 'Erro'
 
     def __init__(self, id, status, score, *args, **kwargs):
         self._id = id
